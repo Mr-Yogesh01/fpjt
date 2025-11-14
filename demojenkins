@@ -1,8 +1,8 @@
 pipeline {
     agent any 
-    stage('Checkout from Git') {
+    stage('Git Clone') {
             steps {
-                git branch: 'main', url: 'https://github.com/CloudTechDevOps/fpjt.git'
+                git branch: 'main', url: 'https://github.com/Mr-Yogesh01/fpjt.git'
             }
         }
 }
