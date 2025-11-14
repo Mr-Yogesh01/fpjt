@@ -5,4 +5,19 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Mr-Yogesh01/fpjt.git'
             }
         }
+ stages {
+        stage('Build') {
+            steps {
+                echo "Running Maven Clean & Package..."
+                sh 'mvn clean package -DskipTests'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                echo "Running Maven Test Cases..."
+                sh 'mvn test'
+            }
+        }
+    }
 }
